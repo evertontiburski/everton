@@ -1,0 +1,19 @@
+{
+    "name": "everton/everton",
+    "description": "meu portfólio",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Everton\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Everton Tiburski",
+            "email": "evertontiburski@gmail.com"
+        }
+    ],
+    "require": {
+        "pecee/simple-router": "5.4.1.7"
+    }
+}

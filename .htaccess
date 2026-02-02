@@ -1,0 +1,16 @@
+#Desativando a exibição de pastas e diretórios que não contenham um arquivo index.
+Options -indexes
+
+#Ativando o modo de reescrita para urls
+RewriteEngine On
+
+#Definindo url base
+RewriteBase /everton
+
+#Definindo condições de reescrita da url
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-l
+
+#Regras
+RewriteRule ^(.*)$ index.php/$1
