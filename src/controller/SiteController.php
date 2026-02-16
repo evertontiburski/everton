@@ -23,27 +23,22 @@ class SiteController extends Controlador
     public function index(): void
     {
         $posts = (new postModel())->buscar('status = 1 ORDER BY id_post DESC');
+
+        //Exemplos
+        // 2. (Futuro) Buscar informações do "Sobre" do banco de dados
+        // $sobre = (new SobreModel())->buscarPrimeiro();
         
-        $dados = ['posts' => $posts];
+        // 3. (Futuro) Buscar informações de "Contato"
+        // $contato = (new ContatoModel())->buscarPrimeiro();
+
+
+        // 4. Empacota tudo em um único array para a view
+        $dados = [
+            'posts' => $posts
+            // 'sobre'   => $sobre,  // Passa os dados para a view usar
+            // 'contato' => $contato
+        ];
 
         $this->render('index.php', $dados);
-    }
-
-    /**
-     * Renderiza a página de contato.
-     */
-    public function contato(): void
-    {
-        $dados = ['titulo' => 'Fale Conosco'];
-        $this->render('contato.php', $dados);
-    }
-
-    /**
-     * Renderiza a página "sobre".
-     */
-    public function sobre(): void
-    {
-        $dados = ['titulo' => 'Sobre Nós'];
-        $this->render('sobre.php', $dados);
     }
 }
